@@ -2,7 +2,8 @@ SRC_URI="https://www.nuget.org/api/v2/package/dnx-mono/${PV};downloadfilename=dn
          https://raw.githubusercontent.com/aspnet/dnx/dev/LICENSE.txt;name=license;downloadfilename=dnx-license"
 LICENSE="Apache-2.0"			
 LIC_FILES_CHKSUM="file://${WORKDIR}/dnx-license;md5=b6dca064e63c2f038081cd782760b67c"
-RDEPENDS_${PN}+="mono"
+RDEPENDS_${PN}_class-target += "mono mono-xbuild"
+RDEPENDS_${PN}_class-native += "mono"
 BBCLASSEXTEND=+"native"
 
 SRC_URI[license.md5sum] = "b6dca064e63c2f038081cd782760b67c"
